@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التقديم على العصابة</title>
+    <style>
+        body {
+            background-image: url('https://cdn.discordapp.com/attachments/1296285292407423076/1299087557342134313/crips1.png?ex=671bed11&is=671a9b91&hm=a59ce6578787c1480eebe7c5ac19366365a8decd6684dfc1246b7824160e0117');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            cursor: none;
+        }
+
+        .custom-cursor {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid white;
+            background-color: rgba(255, 255, 255, 0);
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+        }
+
+        .custom-cursor.hover {
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+
+        .container {
+            text-align: center;
+        }
+        p {
+            font-size: 40px;
+            font-weight: bold;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .apply-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #005f9e;
+        }
+        .apply-button:hover {
+            background-color: #003d66;
+        }
+
+        .bottom-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .discord-button, .second-discord-button {
+            padding: 15px;
+            font-size: 20px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%; /* جعل الزر دائري */
+            width: 60px; /* تحديد عرض الزر */
+            height: 60px; /* تحديد ارتفاع الزر */
+            background-color: #000000;
+            display: flex; /* لتوسيع الزر */
+            align-items: center; /* توسيط عمودياً */
+            justify-content: center; /* توسيط أفقياً */
+        }
+
+        .discord-button:hover, .second-discord-button:hover {
+            background-color: #000000;
+        }
+
+        .discord-button img, .second-discord-button img {
+            width: 30px; /* عرض الصورة داخل الزر */
+            height: 30px; /* ارتفاع الصورة داخل الزر */
+        }
+
+        img {
+            max-width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="container">
+        <img src="https://cdn.discordapp.com/attachments/1296285292407423076/1299065135205322793/stsmall845x845-pad1000x1000f8f8f8.png?ex=671bd82f&is=671a86af&hm=654677402000a8ffaf0ac8a7d87d651c35a390da8aa36e697e60d06e1ae2d636&" alt="CRIPS Logo">
+        <p>اضغط هنا للتقديم على العصابة</p>
+        <a href="https://forms.gle/TaxGFgoEfbZZLQq87" target="_blank">
+            <button class="apply-button">التقديم على العصابة</button>
+        </a>
+    </div>
+
+    <div class="bottom-buttons">
+        <a href="https://discord.gg/ett" target="_blank">
+            <button class="discord-button">
+                <img src="https://cdn.discordapp.com/attachments/1296285292407423076/1299091123876139019/BbonkAv.png?ex=671bf063&is=671a9ee3&hm=0edcb2185491134907af52f669308706519dbacfbfb868e2f74452ec42375afe&" alt="Discord Icon">
+            </button>
+        </a>
+        <a href="https://discord.gg/evxuq4U4De" target="_blank">
+            <button class="second-discord-button">
+                <img src="https://cdn.discordapp.com/attachments/1296285292407423076/1299091123385667615/21_04_46_10_24_28_.png?ex=671bf063&is=671a9ee3&hm=f33c8f0db1b33a9e1661baac084df7eef9233cbef7a11122adcc8aa2d9f3ed2d" alt="Discord Icon">
+            </button>
+        </a>
+    </div>
+
+    <script>
+        const customCursor = document.getElementById('customCursor');
+
+        document.addEventListener('mousemove', (e) => {
+            customCursor.style.left = e.clientX + 'px';
+            customCursor.style.top = e.clientY + 'px';
+        });
+
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('mouseover', () => {
+                customCursor.style.display = 'block';
+                document.body.style.cursor = 'none';
+                customCursor.classList.add('hover');
+            });
+            button.addEventListener('mouseout', () => {
+                customCursor.classList.remove('hover');
+                document.body.style.cursor = 'none';
+            });
+            button.addEventListener('mousedown', () => {
+                document.body.style.cursor = 'none';
+            });
+            button.addEventListener('mouseup', () => {
+                document.body.style.cursor = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
